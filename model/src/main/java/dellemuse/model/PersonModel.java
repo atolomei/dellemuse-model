@@ -45,9 +45,6 @@ public class PersonModel extends DelleMuseModelObject {
     @JsonProperty("timestamp")
     private OffsetDateTime timestamp;
 
-    @JsonProperty("userModel")
-    private UserModel userModel;
-
     @JsonProperty("title")
     private String title;         
 
@@ -65,6 +62,9 @@ public class PersonModel extends DelleMuseModelObject {
 
     @JsonProperty("infokey")
     private String infoKey;
+
+    @JsonProperty("userModel")
+    private UserModel userModel;
     
     @JsonProperty("photoModel")
     private FileModel photoModel; 
