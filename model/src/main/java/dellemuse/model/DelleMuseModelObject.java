@@ -3,10 +3,10 @@ package dellemuse.model;
 import java.io.Serializable;
 import java.time.OffsetDateTime;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,8 +14,10 @@ import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
 import dellemuse.model.logging.Logger;
+import dellemuse.model.util.Constant;
 
 
+@JsonInclude(Include.NON_NULL)
 public class DelleMuseModelObject extends JsonObject implements Serializable {
             
     private static final long serialVersionUID = 1L;
@@ -24,7 +26,6 @@ public class DelleMuseModelObject extends JsonObject implements Serializable {
     
     @JsonIgnore 
     static final private ObjectMapper mapper = new ObjectMapper();
-    
     
     static  {
         mapper.registerModule(new JavaTimeModule());
@@ -37,29 +38,12 @@ public class DelleMuseModelObject extends JsonObject implements Serializable {
     
     @JsonProperty("created")
     private OffsetDateTime created;
-    
-    @JsonProperty("lastmodified")
+
+    @JsonProperty("lastModified")
     private OffsetDateTime lastModified;
-    
-    @JsonProperty("lastmodifiedUserId")
-    private Long lastmodifiedUserId;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    @JsonProperty("lastModifiedUser")
+    private UserModel lastmodifiedUser;
     
     public Long getId() {
         return id;
@@ -85,12 +69,12 @@ public class DelleMuseModelObject extends JsonObject implements Serializable {
         this.lastModified = lastModified;
     }
 
-    public Long getLastmodifiedUserId() {
-        return lastmodifiedUserId;
+    public UserModel getLastmodifiedUser() {
+        return lastmodifiedUser;
     }
 
-    public void setLastModifiedUserId(Long lastmodifiedUserId) {
-        this.lastmodifiedUserId = lastmodifiedUserId;
+    public void setLastModifiedUser(UserModel lastmodifiedUser) {
+        this.lastmodifiedUser = lastmodifiedUser;
     }
 
     @JsonIgnore 
@@ -106,7 +90,6 @@ public class DelleMuseModelObject extends JsonObject implements Serializable {
                         return "\"error\":\"" + e.getClass().getName()+ " | " + e.getMessage()+"\""; 
             }
     }
-    
     
     @Override
     public String toString() {

@@ -17,41 +17,31 @@ public class ArtWorkModel extends DelleMuseModelObject {
     private ArtWorkTypeModel artworkTypeModel;
     
     @JsonProperty("title")
-    private    String title;
+    private String title;
     
     @JsonProperty("titleKey")
-    private    String  titleKey;
+    private String  titleKey;
 
     @JsonProperty("subtitle")
-    private    String subtitle;
+    private String subtitle;
     
     @JsonProperty("subTitleKey")
-    private    String subTitleKey;
+    private String subTitleKey;
 
     @JsonProperty("info")
-    private    String info;
+    private String info;
     
     @JsonProperty("infoKey")
-    private    String infoKey; 
-
+    private String infoKey; 
     
     @JsonProperty("photoModel")
-    private    FileModel photoModel; 
+    private    ResourceModel photoModel; 
 
-    @JsonProperty("photoKey")
-    String  photoKey;
-    
     @JsonProperty("videoModel")
-    private    FileModel videoModel; 
-    
-    @JsonProperty("videoKey")
-    String videoKey;
+    private    ResourceModel videoModel; 
     
     @JsonProperty("audioModel")
-    private    FileModel audioModel; 
-    
-    @JsonProperty("audioKey")
-    String  audioKey;
+    private    ResourceModel audioModel; 
 
 
 }

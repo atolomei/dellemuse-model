@@ -46,25 +46,14 @@ public class SiteModel extends DelleMuseModelObject {
     @JsonProperty("moreinfoKey")
     private    String  moreinfoKey;
 
-    
     @JsonProperty("photoModel")
-    private    FileModel photoModel; 
+    private    ResourceModel photoModel; 
 
-    @JsonProperty("photoKey")
-    String  photoKey;
-    
     @JsonProperty("videoModel")
-    private    FileModel videoModel; 
-    
-    @JsonProperty("videoKey")
-    String videoKey;
+    private    ResourceModel videoModel; 
     
     @JsonProperty("audioModel")
-    private    FileModel audioModel; 
-    
-    @JsonProperty("audioKey")
-    String  audioKey;
-
+    private    ResourceModel audioModel; 
 
     
     public SiteModel() {

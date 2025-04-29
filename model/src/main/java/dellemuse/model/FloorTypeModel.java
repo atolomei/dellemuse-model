@@ -12,9 +12,5 @@ public class FloorTypeModel extends DelleMuseModelObject {
     @JsonProperty("nameKey")
     private String nameKey;
     
-    
-
-    
-    
 
 }

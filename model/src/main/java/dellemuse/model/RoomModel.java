@@ -13,13 +13,11 @@ public class RoomModel extends DelleMuseModelObject {
     @JsonProperty("nameKey")
     private String nameKey;
     
-     @JsonProperty("roomTypeModel")
+    @JsonProperty("roomTypeModel")
     private RoomTypeModel roomTypeModel;
    
-
      @JsonProperty("floorModel")
      private FloorModel floorModel;
-
      
     @JsonProperty("title")
     private    String title;
@@ -32,7 +30,6 @@ public class RoomModel extends DelleMuseModelObject {
     
     @JsonProperty("subTitleKey")
     private    String subTitleKey;
-
     
     @JsonProperty("roomnumber")
     private    String roomNumber;
@@ -40,7 +37,6 @@ public class RoomModel extends DelleMuseModelObject {
     @JsonProperty("roomumberkey")
     private    String  roomNumberKey;
 
-    
     @JsonProperty("info")
     private    String info;
     
@@ -59,23 +55,15 @@ public class RoomModel extends DelleMuseModelObject {
     @JsonProperty("moreinfoKey")
     private    String  moreinfoKey;
 
-    //@Column(name="created")
-    //photo               bytea,
+    @JsonProperty("photoModel")
+    private    ResourceModel photoModel; 
+
+    @JsonProperty("videoModel")
+    private    ResourceModel videoModel; 
     
-    @JsonProperty("photoKey")
-    String  photoKey;
-    
-    //@Column(name="created")
-    //video               bytea,
-    
-    @JsonProperty("videoKey")
-    String videoKey;
-    
-    //@Column(name="created")
-    //audio               bytea,
-    
-    @JsonProperty("audioKey")
-    String  audioKey;
+    @JsonProperty("audioModel")
+    private    ResourceModel audioModel; 
+
     
     public RoomModel() {
         

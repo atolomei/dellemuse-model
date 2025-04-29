@@ -2,8 +2,7 @@ package dellemuse.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
-public class FileModel extends DelleMuseModelObject {
+public class ResourceModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
@@ -13,6 +12,9 @@ public class FileModel extends DelleMuseModelObject {
     @JsonProperty("nameKey")
     private String nameKey;
 
+    @JsonProperty("media")
+    private String media;
+    
     @JsonProperty("bucket")
     private String bucket;
 
@@ -25,7 +27,5 @@ public class FileModel extends DelleMuseModelObject {
     @JsonProperty("infoKey")
     private String infoKey;
     
-    
-    public FileModel () {}
-
+    public ResourceModel () {}
 }

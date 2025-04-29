@@ -2,7 +2,10 @@ package dellemuse.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-
+/**
+ * 
+ * 
+ */
 public class ArtExhibitionGuideModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
@@ -38,22 +41,14 @@ public class ArtExhibitionGuideModel extends DelleMuseModelObject {
     private    String infoKey; 
 
     @JsonProperty("photoModel")
-    private    FileModel photoModel; 
+    private    ResourceModel photoModel; 
 
-    @JsonProperty("photoKey")
-    String  photoKey;
-    
     @JsonProperty("videoModel")
-    private    FileModel videoModel; 
-    
-    @JsonProperty("videoKey")
-    String videoKey;
+    private    ResourceModel videoModel; 
     
     @JsonProperty("audioModel")
-    private    FileModel audioModel; 
+    private    ResourceModel audioModel; 
     
-    @JsonProperty("audioKey")
-    String  audioKey;
     
     public ArtExhibitionGuideModel () {}
 

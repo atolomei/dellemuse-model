@@ -2,9 +2,6 @@ package dellemuse.model;
 
 import java.time.OffsetDateTime;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
@@ -65,22 +62,13 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
 
     
     @JsonProperty("photoModel")
-    private    FileModel photoModel; 
+    private    ResourceModel photoModel; 
 
-    @JsonProperty("photoKey")
-    String  photoKey;
-    
     @JsonProperty("videoModel")
-    private    FileModel videoModel; 
-    
-    @JsonProperty("videoKey")
-    String videoKey;
+    private    ResourceModel videoModel; 
     
     @JsonProperty("audioModel")
-    private    FileModel audioModel; 
-    
-    @JsonProperty("audioKey")
-    String  audioKey;
+    private    ResourceModel audioModel; 
 
 
     public ArtExhibitionModel() {
