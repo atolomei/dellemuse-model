@@ -7,25 +7,15 @@ public class ArtWorkModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("name")
-    private String name;
-
-    @JsonProperty("nameKey")
-    private String nameKey;
     
     @JsonProperty("artworkTypeModel")
     private ArtWorkTypeModel artworkTypeModel;
     
-    @JsonProperty("title")
-    private String title;
-    
-    @JsonProperty("titleKey")
-    private String  titleKey;
 
     @JsonProperty("subtitle")
     private String subtitle;
     
-    @JsonProperty("subTitleKey")
+    @JsonProperty("subtitleKey")
     private String subTitleKey;
 
     @JsonProperty("info")

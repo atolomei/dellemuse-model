@@ -28,7 +28,7 @@ public class RoomModel extends DelleMuseModelObject {
     @JsonProperty("subtitle")
     private    String subtitle;
     
-    @JsonProperty("subTitleKey")
+    @JsonProperty("subtitleKey")
     private    String subTitleKey;
     
     @JsonProperty("roomnumber")

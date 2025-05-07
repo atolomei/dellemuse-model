@@ -10,11 +10,6 @@ public class ArtExhibitionGuideModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("name")
-    private String name;
-
-    @JsonProperty("nameKey")
-    private String nameKey;
     
     @JsonProperty("artExhibitionModel")
     private ArtExhibitionModel artExhibitionModel;
@@ -22,17 +17,11 @@ public class ArtExhibitionGuideModel extends DelleMuseModelObject {
     @JsonProperty("publisherModel")
     private PersonModel personModel;
 
-    @JsonProperty("title")
-    private    String title;
-    
-    @JsonProperty("titleKey")
-    private    String  titleKey;
-
     @JsonProperty("subtitle")
     private    String subtitle;
     
-    @JsonProperty("subTitleKey")
-    private    String subTitleKey;
+    @JsonProperty("subtitleKey")
+    private    String subtitleKey;
 
     @JsonProperty("info")
     private    String info;

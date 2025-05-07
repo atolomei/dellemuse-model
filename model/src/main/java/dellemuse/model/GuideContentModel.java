@@ -6,28 +6,16 @@ public class GuideContentModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("name")
-    private String name;
-
-    @JsonProperty("nameKey")
-    private String nameKey;
-
     @JsonProperty("artExhibitionGuideModel")
     private ArtExhibitionGuideModel artExhibitionGuideModel;
 
     @JsonProperty("artExhibitionItemModel")
     private ArtExhibitionItemModel artExhibitionItemModel;
 
-    @JsonProperty("title")
-    private String title;
-
-    @JsonProperty("titleKey")
-    private String titleKey;
-
     @JsonProperty("subtitle")
     private String subtitle;
 
-    @JsonProperty("subTitleKey")
+    @JsonProperty("subtitleKey")
     private String subTitleKey;
 
     @JsonProperty("info")

@@ -12,9 +12,6 @@ public class PersonModelRef extends DelleMuseModelObject {
     @JsonProperty("UserId")
     private Long userId;
     
-    @JsonProperty("name")
-    private String name;
-
     @JsonProperty("lastname")
     private String lastname;
 

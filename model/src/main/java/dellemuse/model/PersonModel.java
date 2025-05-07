@@ -11,12 +11,6 @@ public class PersonModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
     
-    @JsonProperty("name")
-    private String name;
-
-    @JsonProperty("namekey")
-    private String nameKey;
-    
     @JsonProperty("lastname")
     private String lastname;
 
@@ -47,16 +41,10 @@ public class PersonModel extends DelleMuseModelObject {
     @JsonProperty("timestamp")
     private OffsetDateTime timestamp;
 
-    @JsonProperty("title")
-    private String title;         
-
-    @JsonProperty("titleKey")
-    private String titleKey;      
-
     @JsonProperty("subtitle")
     private String subtitle;      
     
-    @JsonProperty("subTitleKey")
+    @JsonProperty("subtitleKey")
     private String subTitleKey;   
 
     @JsonProperty("info")
@@ -79,21 +67,6 @@ public class PersonModel extends DelleMuseModelObject {
 
     public PersonModel() {}
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getNameKey() {
-        return nameKey;
-    }
-
-    public void setNameKey(String nameKey) {
-        this.nameKey = nameKey;
-    }
 
     public String getLastname() {
         return lastname;
@@ -173,22 +146,6 @@ public class PersonModel extends DelleMuseModelObject {
 
     public void setTimestamp(OffsetDateTime timestamp) {
         this.timestamp = timestamp;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getTitleKey() {
-        return titleKey;
-    }
-
-    public void setTitleKey(String titleKey) {
-        this.titleKey = titleKey;
     }
 
     public String getSubtitle() {

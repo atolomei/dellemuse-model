@@ -27,7 +27,7 @@ public class FloorModel extends DelleMuseModelObject {
     @JsonProperty("subtitle")
     private    String subtitle;
     
-    @JsonProperty("subTitleKey")
+    @JsonProperty("subtitleKey")
     private    String subTitleKey;
     
     @JsonProperty("floornumber")
