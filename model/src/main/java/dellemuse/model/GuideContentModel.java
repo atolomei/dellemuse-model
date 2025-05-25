@@ -1,16 +1,22 @@
 package dellemuse.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+@JsonInclude(Include.NON_NULL)
 public class GuideContentModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("artExhibitionGuideModel")
+    @JsonProperty("artExhibitionGuide")
     private ArtExhibitionGuideModel artExhibitionGuideModel;
 
-    @JsonProperty("artExhibitionItemModel")
+    @JsonProperty("artExhibitionItem")
     private ArtExhibitionItemModel artExhibitionItemModel;
+
+    @JsonProperty("guideOrder")
+    private int guideOrder;
 
     @JsonProperty("subtitle")
     private String subtitle;
@@ -24,13 +30,13 @@ public class GuideContentModel extends DelleMuseModelObject {
     @JsonProperty("infoKey")
     private String infoKey;
 
-    @JsonProperty("photoModel")
-    private    ResourceModel photoModel; 
+    @JsonProperty("photo")
+    private ResourceModel photoModel;
 
-    @JsonProperty("videoModel")
-    private    ResourceModel videoModel; 
-    
-    @JsonProperty("audioModel")
-    private    ResourceModel audioModel; 
+    @JsonProperty("video")
+    private ResourceModel videoModel;
+
+    @JsonProperty("audio")
+    private ResourceModel audioModel;
 
 }

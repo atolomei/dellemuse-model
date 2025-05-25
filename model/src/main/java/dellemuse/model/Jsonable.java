@@ -6,4 +6,6 @@ package dellemuse.model;
 public interface Jsonable {
 
 	public String toJSON();
+	
 }
+

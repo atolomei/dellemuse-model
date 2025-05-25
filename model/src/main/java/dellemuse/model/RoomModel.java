@@ -1,30 +1,20 @@
 package dellemuse.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-
+@JsonInclude(Include.NON_NULL)
 public class RoomModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
     
-    @JsonProperty("name")
-    private String name;
-    
-    @JsonProperty("nameKey")
-    private String nameKey;
-    
-    @JsonProperty("roomTypeModel")
+    @JsonProperty("roomType")
     private RoomTypeModel roomTypeModel;
    
-     @JsonProperty("floorModel")
+     @JsonProperty("floor")
      private FloorModel floorModel;
      
-    @JsonProperty("title")
-    private    String title;
-    
-    @JsonProperty("titleKey")
-    private    String  titleKey;
-
     @JsonProperty("subtitle")
     private    String subtitle;
     
@@ -55,13 +45,13 @@ public class RoomModel extends DelleMuseModelObject {
     @JsonProperty("moreinfoKey")
     private    String  moreinfoKey;
 
-    @JsonProperty("photoModel")
+    @JsonProperty("photo")
     private    ResourceModel photoModel; 
 
-    @JsonProperty("videoModel")
+    @JsonProperty("video")
     private    ResourceModel videoModel; 
     
-    @JsonProperty("audioModel")
+    @JsonProperty("audio")
     private    ResourceModel audioModel; 
 
     

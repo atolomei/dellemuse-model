@@ -6,6 +6,7 @@ import java.time.OffsetDateTime;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -17,6 +18,8 @@ import dellemuse.model.logging.Logger;
 import dellemuse.model.util.Constant;
 
 @JsonInclude(Include.NON_NULL)
+@JsonPropertyOrder({ "id", "name", "title", "lastmodifiedUser" })
+
 public class DelleMuseModelObject extends JsonObject implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -64,8 +67,13 @@ public class DelleMuseModelObject extends JsonObject implements Serializable {
         this.name = name;
     }
 
+    @JsonIgnore
+    public String getDisplayname() {
+        return (getTitle()!=null) ? getTitle() : getName();
+    }
+    
     public String getTitle() {
-        return title != null ? title : getName();
+        return title;
     }
 
     public void setTitle(String title) {

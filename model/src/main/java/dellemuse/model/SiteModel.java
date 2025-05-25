@@ -1,51 +1,55 @@
 package dellemuse.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-
+@JsonInclude(Include.NON_NULL)
 public class SiteModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
-    
-     @JsonProperty("siteTypeModel")
+
+    @JsonProperty("siteType")
     private SiteTypeModel siteTypeModel;
-   
+
     @JsonProperty("subtitle")
-    private    String subtitle;
-    
+    private String subtitle;
+
     @JsonProperty("subtitleKey")
-    private    String subTitleKey;
+    private String subTitleKey;
 
     @JsonProperty("info")
-    private    String info;
-    
+    private String info;
+
     @JsonProperty("infoKey")
-    private    String infoKey; 
+    private String infoKey;
 
     @JsonProperty("address")
-    private    String address;
-    
+    private String address;
+
     @JsonProperty("addressKey")
-    private    String  addressKey;
+    private String addressKey;
 
     @JsonProperty("moreinfo")
-    private    String moreinfo;
-    
+    private String moreinfo;
+
     @JsonProperty("moreinfoKey")
-    private    String  moreinfoKey;
+    private String moreinfoKey;
 
     @JsonProperty("website")
     private String website;
 
     @JsonProperty("mapurl")
     private String mapurl;
-    
+
     @JsonProperty("email")
     private String email;
 
     @JsonProperty("instagram")
     private String instagram;
-    
+
     @JsonProperty("whatsapp")
     private String whatsapp;
 
@@ -55,39 +59,27 @@ public class SiteModel extends DelleMuseModelObject {
     @JsonProperty("twitter")
     private String twitter;
 
+    @JsonProperty("logo")
+    private ResourceModel logoModel;
 
-    @JsonProperty("logoModel")
-    private    ResourceModel logoModel; 
+    @JsonProperty("photo")
+    private ResourceModel photoModel;
 
-    public ResourceModel getLogoModel() {
-        return logoModel;
-    }
+    @JsonProperty("video")
+    private ResourceModel videoModel;
 
+    @JsonProperty("audio")
+    private ResourceModel audioModel;
 
-    public void setLogoModel(ResourceModel logoModel) {
-        this.logoModel = logoModel;
-    }
+    @JsonProperty("Floor")
+    private List<FloorModel> floors;
 
-
-    
-    @JsonProperty("photoModel")
-    private    ResourceModel photoModel; 
-
-    @JsonProperty("videoModel")
-    private    ResourceModel videoModel; 
-    
-    @JsonProperty("audioModel")
-    private    ResourceModel audioModel; 
-
-    
     public SiteModel() {
     }
-
 
     public SiteTypeModel getSiteTypeModel() {
         return siteTypeModel;
     }
-
 
     public void setSiteTypeModel(SiteTypeModel siteTypeModel) {
         this.siteTypeModel = siteTypeModel;
@@ -109,172 +101,140 @@ public class SiteModel extends DelleMuseModelObject {
         this.subTitleKey = subTitleKey;
     }
 
-
     public String getInfo() {
         return info;
     }
-
 
     public void setInfo(String info) {
         this.info = info;
     }
 
-
     public String getInfoKey() {
         return infoKey;
     }
-
 
     public void setInfoKey(String infoKey) {
         this.infoKey = infoKey;
     }
 
-
     public String getAddress() {
         return address;
     }
-
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-
     public String getAddressKey() {
         return addressKey;
     }
-
 
     public void setAddressKey(String addressKey) {
         this.addressKey = addressKey;
     }
 
-
     public String getMoreinfo() {
         return moreinfo;
     }
-
 
     public void setMoreinfo(String moreinfo) {
         this.moreinfo = moreinfo;
     }
 
-
     public String getMoreinfoKey() {
         return moreinfoKey;
     }
-
 
     public void setMoreinfoKey(String moreinfoKey) {
         this.moreinfoKey = moreinfoKey;
     }
 
-
     public String getWebsite() {
         return website;
     }
-
 
     public void setWebsite(String website) {
         this.website = website;
     }
 
-
     public String getMapurl() {
         return mapurl;
     }
-
 
     public void setMapurl(String mapurl) {
         this.mapurl = mapurl;
     }
 
-
     public String getEmail() {
         return email;
     }
-
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-
     public String getInstagram() {
         return instagram;
     }
-
 
     public void setInstagram(String instagram) {
         this.instagram = instagram;
     }
 
-
     public String getWhatsapp() {
         return whatsapp;
     }
-
 
     public void setWhatsapp(String whatsapp) {
         this.whatsapp = whatsapp;
     }
 
-
     public String getPhone() {
         return phone;
     }
-
 
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-
     public String getTwitter() {
         return twitter;
     }
-
 
     public void setTwitter(String twitter) {
         this.twitter = twitter;
     }
 
-
     public ResourceModel getPhotoModel() {
         return photoModel;
     }
-
 
     public void setPhotoModel(ResourceModel photoModel) {
         this.photoModel = photoModel;
     }
 
-
     public ResourceModel getVideoModel() {
         return videoModel;
     }
-
 
     public void setVideoModel(ResourceModel videoModel) {
         this.videoModel = videoModel;
     }
 
-
     public ResourceModel getAudioModel() {
         return audioModel;
     }
-
 
     public void setAudioModel(ResourceModel audioModel) {
         this.audioModel = audioModel;
     }
 
-
-    public static long getSerialversionuid() {
-        return serialVersionUID;
+    public ResourceModel getLogoModel() {
+        return logoModel;
     }
 
-    
-    
+    public void setLogoModel(ResourceModel logoModel) {
+        this.logoModel = logoModel;
+    }
 
 }

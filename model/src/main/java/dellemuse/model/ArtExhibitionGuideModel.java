@@ -1,44 +1,53 @@
 package dellemuse.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
-/**
- * 
- * 
- */
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(Include.NON_NULL)
 public class ArtExhibitionGuideModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
-    
-    @JsonProperty("artExhibitionModel")
+    @JsonProperty("artExhibition")
     private ArtExhibitionModel artExhibitionModel;
 
-    @JsonProperty("publisherModel")
+    @JsonProperty("publisher")
     private PersonModel personModel;
 
+    @JsonProperty("contents")
+    private List<GuideContentModel> contents;
+
     @JsonProperty("subtitle")
-    private    String subtitle;
-    
+    private String subtitle;
+
     @JsonProperty("subtitleKey")
-    private    String subtitleKey;
+    private String subtitleKey;
 
     @JsonProperty("info")
-    private    String info;
-    
+    private String info;
+
     @JsonProperty("infoKey")
-    private    String infoKey; 
+    private String infoKey;
 
-    @JsonProperty("photoModel")
-    private    ResourceModel photoModel; 
+    @JsonProperty("artExhibitionGuideOrder")
+    private int artExhibitionGuideOrder;
 
-    @JsonProperty("videoModel")
-    private    ResourceModel videoModel; 
-    
-    @JsonProperty("audioModel")
-    private    ResourceModel audioModel; 
-    
-    
-    public ArtExhibitionGuideModel () {}
+    @JsonProperty("official")
+    private boolean official;
+
+    @JsonProperty("photo")
+    private ResourceModel photoModel;
+
+    @JsonProperty("video")
+    private ResourceModel videoModel;
+
+    @JsonProperty("audio")
+    private ResourceModel audioModel;
+
+    public ArtExhibitionGuideModel() {
+    }
 
 }

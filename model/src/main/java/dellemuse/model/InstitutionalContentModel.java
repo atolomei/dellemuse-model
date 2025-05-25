@@ -1,20 +1,23 @@
 package dellemuse.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 /**
  * 
  */
+@JsonInclude(Include.NON_NULL)
 public class InstitutionalContentModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
     
-    @JsonProperty("institutionModel")
-    private InstitutionModel institutioneModel;
-    
-    @JsonProperty("SiteModel")
+    @JsonProperty("Site")
     private SiteModel siteModel;
 
+    @JsonProperty("institution")
+    private InstitutionModel institutioneModel;
+    
     @JsonProperty("subtitle")
     private    String subtitle;
     
@@ -39,13 +42,13 @@ public class InstitutionalContentModel extends DelleMuseModelObject {
     @JsonProperty("moreinfoKey")
     private    String  moreinfoKey;
     
-    @JsonProperty("photoModel")
+    @JsonProperty("photo")
     private    ResourceModel photoModel; 
 
-    @JsonProperty("videoModel")
+    @JsonProperty("video")
     private    ResourceModel videoModel; 
     
-    @JsonProperty("audioModel")
+    @JsonProperty("audio")
     private    ResourceModel audioModel; 
 
 }

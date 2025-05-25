@@ -1,22 +1,30 @@
 package dellemuse.model;
 
 import java.time.OffsetDateTime;
+import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+
+@JsonInclude(Include.NON_NULL)
 public class ArtExhibitionModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
-
-    @JsonProperty("artExhibitionStatusTypeName")
-    private String artExhibitionStatusTypeName;
-
-    @JsonProperty("siteModel")
+    
+    @JsonProperty("site")
     private SiteModel siteModel;
+
+    @JsonProperty("artExhibitionStatusType")
+    private ArtExhibitionStatusTypeModel artExhibitionStatusType;
 
     @JsonProperty("permanent")
     private boolean permanent;
 
+    @JsonProperty("artExhibitionItems")
+    private List<ArtExhibitionItemModel> artExhibitionItems;
+    
     @JsonProperty("fromDate")
     private OffsetDateTime fromDate;
 
@@ -47,13 +55,13 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
     @JsonProperty("moreinfoKey")
     private String moreinfoKey;
 
-    @JsonProperty("photoModel")
+    @JsonProperty("photo")
     private ResourceModel photoModel;
 
-    @JsonProperty("videoModel")
+    @JsonProperty("video")
     private ResourceModel videoModel;
 
-    @JsonProperty("audioModel")
+    @JsonProperty("audio")
     private ResourceModel audioModel;
 
     @JsonProperty("website")
@@ -81,13 +89,7 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
 
     }
 
-    public String getArtExhibitionStatusTypeName() {
-        return artExhibitionStatusTypeName;
-    }
-
-    public void setArtExhibitionStatusTypeName(String artExhibitionStatusTypeName) {
-        this.artExhibitionStatusTypeName = artExhibitionStatusTypeName;
-    }
+    
 
     public SiteModel getSiteModel() {
         return siteModel;
@@ -168,6 +170,30 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
     public void setAddressKey(String addressKey) {
         this.addressKey = addressKey;
     }
+
+    public ArtExhibitionStatusTypeModel getArtExhibitionStatusType() {
+        return artExhibitionStatusType;
+    }
+
+
+
+    public void setArtExhibitionStatusType(ArtExhibitionStatusTypeModel artExhibitionStatusType) {
+        this.artExhibitionStatusType = artExhibitionStatusType;
+    }
+
+
+
+    public List<ArtExhibitionItemModel> getArtExhibitionItems() {
+        return artExhibitionItems;
+    }
+
+
+
+    public void setArtExhibitionItems(List<ArtExhibitionItemModel> artExhibitionItems) {
+        this.artExhibitionItems = artExhibitionItems;
+    }
+
+
 
     public String getMoreinfo() {
         return moreinfo;
@@ -265,8 +291,6 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
         this.twitter = twitter;
     }
 
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
+
 
 }

@@ -47,9 +47,8 @@ public class JsonObject implements Jsonable {
 	public String toJSON() {
 	  try {
 			return getObjectMapper().writeValueAsString(this);
-		} catch (JsonProcessingException e) {
-					logger.error(e);
-					return "\"error\":\"" + e.getClass().getName()+ " | " + e.getMessage()+"\""; 
+		} catch (Exception e) {
+				return "\"error\":\"" + e.getClass().getName()+ " | " + e.getMessage()+"\""; 
 		}
 	}
 

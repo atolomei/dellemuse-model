@@ -4,9 +4,11 @@ import java.time.OffsetDateTime;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(Include.NON_NULL)
+@JsonPropertyOrder({ "id", "name", "lastname", "title", "user"  })
 public class PersonModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
@@ -65,8 +67,8 @@ public class PersonModel extends DelleMuseModelObject {
     @JsonProperty("audio")
     private ResourceModel audio; 
 
+    
     public PersonModel() {}
-
 
     public String getLastname() {
         return lastname;
@@ -204,4 +206,14 @@ public class PersonModel extends DelleMuseModelObject {
         this.audio = audio;
     }
 
+    public void setPhoto(ResourceModel photo) {
+        this.photo = photo;
+    }
+
+    public ResourceModel getPhoto() {
+        return photo;
+    }
+
+
+    
 }

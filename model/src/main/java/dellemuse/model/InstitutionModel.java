@@ -9,46 +9,46 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class InstitutionModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
-    
+
     @JsonProperty("institutionTypeModel")
     private InstitutionTypeModel institutionTypeModel;
 
     @JsonProperty("subtitle")
-    private    String subtitle;
-    
+    private String subtitle;
+
     @JsonProperty("subtitleKey")
-    private    String subTitleKey;
+    private String subTitleKey;
 
     @JsonProperty("info")
-    private    String info;
-    
+    private String info;
+
     @JsonProperty("infoKey")
-    private    String infoKey; 
+    private String infoKey;
 
     @JsonProperty("address")
-    private    String address;
-    
+    private String address;
+
     @JsonProperty("addressKey")
-    private    String  addressKey;
+    private String addressKey;
 
     @JsonProperty("moreinfo")
-    private    String moreinfo;
-    
+    private String moreinfo;
+
     @JsonProperty("moreinfoKey")
-    private    String  moreinfoKey;
+    private String moreinfoKey;
 
     @JsonProperty("logoModel")
-    private    ResourceModel logoModel; 
-
+    private ResourceModel logoModel;
 
     @JsonProperty("photoModel")
-    private    ResourceModel photoModel; 
+    private ResourceModel photoModel;
 
     @JsonProperty("videoModel")
-    private    ResourceModel videoModel; 
-    
+    private ResourceModel videoModel;
+
     @JsonProperty("audioModel")
-    private    ResourceModel audioModel; 
+    private ResourceModel audioModel;
+
     public ResourceModel getLogoModel() {
         return logoModel;
     }
@@ -153,6 +153,4 @@ public class InstitutionModel extends DelleMuseModelObject {
         this.audioModel = audioModel;
     }
 
-    
-    
 }

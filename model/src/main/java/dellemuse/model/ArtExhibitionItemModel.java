@@ -1,52 +1,51 @@
 package dellemuse.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-
+@JsonInclude(Include.NON_NULL)
 public class ArtExhibitionItemModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
-    
-    @JsonProperty("name")
-    private String name;
 
-    @JsonProperty("nameKey")
-    private String nameKey;
+    @JsonProperty("artExhibition")
+    private ArtExhibitionModel artExhibitionModel;
 
-    @JsonProperty("artworkModel")
+    @JsonProperty("artwork")
     private ArtWorkModel artworkModel;
-
-    @JsonProperty("siteModel")
+    
+    @JsonProperty("site")
     private SiteModel siteModel;
 
-    @JsonProperty("floorModel")
+    @JsonProperty("floor")
     private FloorModel floorModel;
 
-    @JsonProperty("roomModel")
+    @JsonProperty("room")
     private RoomModel roomModel;
 
-    @JsonProperty("ordinal")
-    private int ordinal;
-
+    @JsonProperty("artExhibitionOrder")
+    private int artExhibitionOrder;
+    
     @JsonProperty("readcode")
     private String readCode;
 
     @JsonProperty("qcode")
     private String qCode;
 
-    @JsonProperty("title")
-    private String title;
-
-    @JsonProperty( "titleKey")
-    private String titleKey;
-
-    @JsonProperty( "info")
+    @JsonProperty("info")
     private String info;
 
     @JsonProperty("infoKey")
     private String infoKey;
+    
+    @JsonProperty("mapurl")
+    private String mapurl;
 
-    public ArtExhibitionItemModel() {
-
-    }
+    @JsonProperty("website")
+    private String wesite;
+    
+    public ArtExhibitionItemModel() {}
+    
+    
 }
