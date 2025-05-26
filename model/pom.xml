@@ -5,9 +5,7 @@
 
 	<groupId>dellemuse</groupId>
 	<artifactId>dellemuse-model</artifactId>
-
 	<name>dellemuse-model</name>
-
 	<url>http://maven.apache.org</url>
 	<version>0.1-beta</version>
 	<packaging>jar</packaging>
