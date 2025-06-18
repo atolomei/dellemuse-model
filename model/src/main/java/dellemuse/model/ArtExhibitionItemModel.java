@@ -45,6 +45,102 @@ public class ArtExhibitionItemModel extends DelleMuseModelObject {
     @JsonProperty("website")
     private String wesite;
     
+    public ArtExhibitionModel getArtExhibitionModel() {
+        return artExhibitionModel;
+    }
+
+    public void setArtExhibitionModel(ArtExhibitionModel artExhibitionModel) {
+        this.artExhibitionModel = artExhibitionModel;
+    }
+
+    public ArtWorkModel getArtworkModel() {
+        return artworkModel;
+    }
+
+    public void setArtworkModel(ArtWorkModel artworkModel) {
+        this.artworkModel = artworkModel;
+    }
+
+    public SiteModel getSiteModel() {
+        return siteModel;
+    }
+
+    public void setSiteModel(SiteModel siteModel) {
+        this.siteModel = siteModel;
+    }
+
+    public FloorModel getFloorModel() {
+        return floorModel;
+    }
+
+    public void setFloorModel(FloorModel floorModel) {
+        this.floorModel = floorModel;
+    }
+
+    public RoomModel getRoomModel() {
+        return roomModel;
+    }
+
+    public void setRoomModel(RoomModel roomModel) {
+        this.roomModel = roomModel;
+    }
+
+    public int getArtExhibitionOrder() {
+        return artExhibitionOrder;
+    }
+
+    public void setArtExhibitionOrder(int artExhibitionOrder) {
+        this.artExhibitionOrder = artExhibitionOrder;
+    }
+
+    public String getReadCode() {
+        return readCode;
+    }
+
+    public void setReadCode(String readCode) {
+        this.readCode = readCode;
+    }
+
+    public String getqCode() {
+        return qCode;
+    }
+
+    public void setqCode(String qCode) {
+        this.qCode = qCode;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public String getInfoKey() {
+        return infoKey;
+    }
+
+    public void setInfoKey(String infoKey) {
+        this.infoKey = infoKey;
+    }
+
+    public String getMapurl() {
+        return mapurl;
+    }
+
+    public void setMapurl(String mapurl) {
+        this.mapurl = mapurl;
+    }
+
+    public String getWesite() {
+        return wesite;
+    }
+
+    public void setWesite(String wesite) {
+        this.wesite = wesite;
+    }
+
     public ArtExhibitionItemModel() {}
     
     

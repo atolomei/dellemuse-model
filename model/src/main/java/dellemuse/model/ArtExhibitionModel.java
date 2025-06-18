@@ -25,6 +25,10 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
     @JsonProperty("artExhibitionItems")
     private List<ArtExhibitionItemModel> artExhibitionItems;
     
+    @JsonProperty("location")
+    private String location;
+    
+    
     @JsonProperty("fromDate")
     private OffsetDateTime fromDate;
 
@@ -43,6 +47,21 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
     @JsonProperty("infoKey")
     private String infoKey;
 
+
+    @JsonProperty("intro")
+    private String intro;
+
+    @JsonProperty("introKey")
+    private String introKey;
+
+    
+    @JsonProperty("opens")
+    private String opens;
+
+    @JsonProperty("opensKey")
+    private String opensKey;
+
+    
     @JsonProperty("address")
     private String address;
 
@@ -223,6 +242,18 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
         return videoModel;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+
+
     public void setVideoModel(ResourceModel videoModel) {
         this.videoModel = videoModel;
     }
@@ -289,6 +320,54 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
 
     public void setTwitter(String twitter) {
         this.twitter = twitter;
+    }
+
+
+
+    public String getOpens() {
+        return opens;
+    }
+
+
+
+    public void setOpens(String opens) {
+        this.opens = opens;
+    }
+
+
+
+    public String getOpensKey() {
+        return opensKey;
+    }
+
+
+
+    public void setOpensKey(String opensKey) {
+        this.opensKey = opensKey;
+    }
+
+
+
+    public String getIntro() {
+        return intro;
+    }
+
+
+
+    public void setIntro(String intro) {
+        this.intro = intro;
+    }
+
+
+
+    public String getIntroKey() {
+        return introKey;
+    }
+
+
+
+    public void setIntroKey(String introKey) {
+        this.introKey = introKey;
     }
 
 

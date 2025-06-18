@@ -11,6 +11,12 @@ public class SiteModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
+    @JsonProperty("shortName")
+    private String shortName;
+    
+    @JsonProperty("institution")
+    private InstitutionModel institutionModel;
+    
     @JsonProperty("siteType")
     private SiteTypeModel siteTypeModel;
 
@@ -20,11 +26,23 @@ public class SiteModel extends DelleMuseModelObject {
     @JsonProperty("subtitleKey")
     private String subTitleKey;
 
+    @JsonProperty("opens")
+    private String opens;
+    
+    @JsonProperty("intro")
+    private String intro;
+    
+    @JsonProperty("introKey")
+    private String introKey;
+    
     @JsonProperty("info")
     private String info;
 
     @JsonProperty("infoKey")
     private String infoKey;
+    
+    @JsonProperty("siteAbstract")
+    private String siteAbstract;
 
     @JsonProperty("address")
     private String address;
@@ -141,6 +159,14 @@ public class SiteModel extends DelleMuseModelObject {
         this.moreinfo = moreinfo;
     }
 
+    public String getSiteAbstract() {
+        return siteAbstract;
+    }
+
+    public void setSiteAbstract(String siteabstract) {
+        this.siteAbstract = siteabstract;
+    }
+
     public String getMoreinfoKey() {
         return moreinfoKey;
     }
@@ -181,6 +207,30 @@ public class SiteModel extends DelleMuseModelObject {
         this.instagram = instagram;
     }
 
+    public InstitutionModel getInstitutionModel() {
+        return institutionModel;
+    }
+
+    public void setInstitutionModel(InstitutionModel institutionModel) {
+        this.institutionModel = institutionModel;
+    }
+
+    public String getOpens() {
+        return opens;
+    }
+
+    public void setOpens(String opens) {
+        this.opens = opens;
+    }
+
+    public List<FloorModel> getFloors() {
+        return floors;
+    }
+
+    public void setFloors(List<FloorModel> floors) {
+        this.floors = floors;
+    }
+
     public String getWhatsapp() {
         return whatsapp;
     }
@@ -213,6 +263,14 @@ public class SiteModel extends DelleMuseModelObject {
         this.photoModel = photoModel;
     }
 
+    public String getIntro() {
+        return intro;
+    }
+
+    public void setIntro(String welcome) {
+        this.intro = welcome;
+    }
+
     public ResourceModel getVideoModel() {
         return videoModel;
     }
@@ -235,6 +293,14 @@ public class SiteModel extends DelleMuseModelObject {
 
     public void setLogoModel(ResourceModel logoModel) {
         this.logoModel = logoModel;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
     }
 
 }

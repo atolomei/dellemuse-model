@@ -30,5 +30,45 @@ public class ResourceModel extends DelleMuseModelObject {
     public String getDisplayname() {
         return getName();
     }
+
+    public String getBucketName() {
+        return bucketName;
+    }
+
+    public String getObjectName() {
+        return objectName;
+    }
+
+    public String getMedia() {
+        return media;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public String getInfoKey() {
+        return infoKey;
+    }
+
+    public void setBucketName(String bucketName) {
+        this.bucketName = bucketName;
+    }
+
+    public void setObjectName(String objectName) {
+        this.objectName = objectName;
+    }
+
+    public void setMedia(String media) {
+        this.media = media;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public void setInfoKey(String infoKey) {
+        this.infoKey = infoKey;
+    }
     
 }
