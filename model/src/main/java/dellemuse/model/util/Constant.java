@@ -45,8 +45,8 @@ public class Constant {
     static final public int DEFAULT_EXPIRY_TIME = 7 * 24 * 3600;
 
     static final public int BUFFER_SIZE = 8192;
-    public static final int TRAFFIC_TOKENS_DEFAULT = 10;
-
+    static final public int TRAFFIC_TOKENS_DEFAULT = 10;
+    static final public long DEFAULT_SLEEP_TIME = 1 * 60 * 1000; // 1 minute
     
 
 }
