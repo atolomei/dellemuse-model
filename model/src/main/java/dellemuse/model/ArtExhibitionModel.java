@@ -5,29 +5,34 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+import dellemuse.model.ref.RefArtExhibitionItemModel;
+import dellemuse.model.ref.RefResourceModel;
+import dellemuse.model.ref.RefSiteModel;
 
 
 @JsonInclude(Include.NON_NULL)
+@JsonPropertyOrder({ "id", "name", "artExhibition", "site", "permanent" })
 public class ArtExhibitionModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
     
     @JsonProperty("site")
-    private SiteModel siteModel;
-
-    @JsonProperty("artExhibitionStatusType")
-    private ArtExhibitionStatusTypeModel artExhibitionStatusType;
+    private RefSiteModel refSiteModel;
 
     @JsonProperty("permanent")
     private boolean permanent;
 
     @JsonProperty("artExhibitionItems")
-    private List<ArtExhibitionItemModel> artExhibitionItems;
-    
+    private List<RefArtExhibitionItemModel> refArtExhibitionItems;
+
+    @JsonProperty("artExhibitionStatusType")
+    private ArtExhibitionStatusTypeModel artExhibitionStatusType;
+
     @JsonProperty("location")
     private String location;
-    
     
     @JsonProperty("fromDate")
     private OffsetDateTime fromDate;
@@ -47,20 +52,17 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
     @JsonProperty("infoKey")
     private String infoKey;
 
-
     @JsonProperty("intro")
     private String intro;
 
     @JsonProperty("introKey")
     private String introKey;
-
     
     @JsonProperty("opens")
     private String opens;
 
     @JsonProperty("opensKey")
     private String opensKey;
-
     
     @JsonProperty("address")
     private String address;
@@ -73,15 +75,6 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
 
     @JsonProperty("moreinfoKey")
     private String moreinfoKey;
-
-    @JsonProperty("photo")
-    private ResourceModel photoModel;
-
-    @JsonProperty("video")
-    private ResourceModel videoModel;
-
-    @JsonProperty("audio")
-    private ResourceModel audioModel;
 
     @JsonProperty("website")
     private String website;
@@ -104,18 +97,26 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
     @JsonProperty("twitter")
     private String twitter;
 
+    @JsonProperty("photo")
+    private RefResourceModel refPhotoModel;
+
+    @JsonProperty("video")
+    private RefResourceModel refVideoModel;
+
+    @JsonProperty("audio")
+    private RefResourceModel refAudioModel;
+
+
     public ArtExhibitionModel() {
+    }
+   
 
+    public RefSiteModel getRefSite() {
+        return refSiteModel;
     }
 
-    
-
-    public SiteModel getSiteModel() {
-        return siteModel;
-    }
-
-    public void setSiteModel(SiteModel siteModel) {
-        this.siteModel = siteModel;
+    public void setRefSite(RefSiteModel siteModel) {
+        this.refSiteModel = siteModel;
     }
 
     public boolean isPermanent() {
@@ -194,25 +195,17 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
         return artExhibitionStatusType;
     }
 
-
-
     public void setArtExhibitionStatusType(ArtExhibitionStatusTypeModel artExhibitionStatusType) {
         this.artExhibitionStatusType = artExhibitionStatusType;
     }
 
-
-
-    public List<ArtExhibitionItemModel> getArtExhibitionItems() {
-        return artExhibitionItems;
+    public List<RefArtExhibitionItemModel> getRefArtExhibitionItems() {
+        return refArtExhibitionItems;
     }
 
-
-
-    public void setArtExhibitionItems(List<ArtExhibitionItemModel> artExhibitionItems) {
-        this.artExhibitionItems = artExhibitionItems;
+    public void setRefArtExhibitionItems(List<RefArtExhibitionItemModel> artExhibitionItems) {
+        this.refArtExhibitionItems = artExhibitionItems;
     }
-
-
 
     public String getMoreinfo() {
         return moreinfo;
@@ -230,16 +223,16 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
         this.moreinfoKey = moreinfoKey;
     }
 
-    public ResourceModel getPhotoModel() {
-        return photoModel;
+    public RefResourceModel getRefPhotoModel() {
+        return refPhotoModel;
     }
 
-    public void setPhotoModel(ResourceModel photoModel) {
-        this.photoModel = photoModel;
+    public void setRefPhotoModel(RefResourceModel photoModel) {
+        this.refPhotoModel = photoModel;
     }
 
-    public ResourceModel getVideoModel() {
-        return videoModel;
+    public RefResourceModel getRefVideoModel() {
+        return refVideoModel;
     }
 
     public String getLocation() {
@@ -254,16 +247,16 @@ public class ArtExhibitionModel extends DelleMuseModelObject {
 
 
 
-    public void setVideoModel(ResourceModel videoModel) {
-        this.videoModel = videoModel;
+    public void setRefVideoModel(RefResourceModel videoModel) {
+        this.refVideoModel = videoModel;
     }
 
-    public ResourceModel getAudioModel() {
-        return audioModel;
+    public RefResourceModel getRefAudioModel() {
+        return refAudioModel;
     }
 
-    public void setAudioModel(ResourceModel audioModel) {
-        this.audioModel = audioModel;
+    public void setRefAudioModel(RefResourceModel audioModel) {
+        this.refAudioModel = audioModel;
     }
 
     public String getWebsite() {

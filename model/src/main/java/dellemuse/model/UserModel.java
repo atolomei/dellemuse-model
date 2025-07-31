@@ -1,9 +1,7 @@
 package dellemuse.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-
 
 @JsonInclude(Include.NON_NULL)
 public class UserModel extends DelleMuseModelObject {
@@ -16,7 +14,5 @@ public class UserModel extends DelleMuseModelObject {
     public String getDisplayname() {
         return getName();
     }
-
-
 
 }

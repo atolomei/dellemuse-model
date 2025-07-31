@@ -2,9 +2,11 @@ package dellemuse.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(Include.NON_NULL)
+@JsonPropertyOrder({ "id", "name", "floor" })
 public class RoomModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;

@@ -18,7 +18,6 @@ public class JsonObject implements Jsonable {
 
 	@JsonIgnore 
 	static final private ObjectMapper mapper = new ObjectMapper();
-
 	  
 	static  {
 		mapper.registerModule(new JavaTimeModule());
@@ -26,13 +25,14 @@ public class JsonObject implements Jsonable {
 		mapper.registerModule(new Jdk8Module());
 		//mapper.configure(SerializationFeature.FAIL_ON_SELF_REFERENCES, false);
 	}
-	
-	public JsonObject() {
-	}
-	
+
 	@JsonIgnore 
 	public ObjectMapper getObjectMapper() {
 		return mapper;
+	}
+
+	
+	public JsonObject() {
 	}
 	
 	@Override
@@ -43,12 +43,14 @@ public class JsonObject implements Jsonable {
 			return str.toString();
 	}
 
+	
+	
 	@Override
 	public String toJSON() {
 	  try {
 			return getObjectMapper().writeValueAsString(this);
 		} catch (Exception e) {
-				return "\"error\":\"" + e.getClass().getName()+ " | " + e.getMessage()+"\""; 
+				return " { \"error\": \"" + e.getClass().getName() + (e.getMessage()!=null? (" | " + e.getMessage().replace("\"", "'" + "\"")) : "") + " }"; 
 		}
 	}
 

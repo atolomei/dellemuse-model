@@ -1,15 +1,23 @@
 package dellemuse.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 /**
  * 
  * 
  */
+@JsonInclude(Include.NON_NULL)
+@JsonPropertyOrder({ "id", "name", "shortName" })
 public class InstitutionModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
+    @JsonProperty("shortName")
+    private String shortname;
+    
     @JsonProperty("institutionTypeModel")
     private InstitutionTypeModel institutionTypeModel;
 
@@ -79,6 +87,14 @@ public class InstitutionModel extends DelleMuseModelObject {
 
     public void setSubTitleKey(String subTitleKey) {
         this.subTitleKey = subTitleKey;
+    }
+
+    public String getShortName() {
+        return shortname;
+    }
+
+    public void setShortName(String info) {
+        this.shortname = info;
     }
 
     public String getInfo() {

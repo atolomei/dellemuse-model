@@ -5,13 +5,22 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import dellemuse.model.ref.RefResourceModel;
+import dellemuse.model.ref.RefSiteModel;
+
 @JsonInclude(Include.NON_NULL)
+@JsonPropertyOrder({ "id", "name", "site", "artists" })
 public class ArtWorkModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
+    @JsonProperty("site")
+    private RefSiteModel refSiteModel;
+    
+    // REF
     @JsonProperty("artists")
     Set<PersonModelRef> artists = new HashSet<>();
 
@@ -40,14 +49,17 @@ public class ArtWorkModel extends DelleMuseModelObject {
     private String spec;
 
     @JsonProperty("photo")
-    private ResourceModel photoModel;
+    private RefResourceModel photoModel;
 
     @JsonProperty("video")
-    private ResourceModel videoModel;
+    private RefResourceModel videoModel;
 
     @JsonProperty("audio")
-    private ResourceModel audioModel;
-
+    private RefResourceModel refAudioModel;
+    
+    @JsonProperty("usethumbnail")
+    private boolean usethumbnail;
+    
     public Set<PersonModelRef> getArtists() {
         return artists;
     }
@@ -96,24 +108,24 @@ public class ArtWorkModel extends DelleMuseModelObject {
         this.infoKey = infoKey;
     }
 
-    public ResourceModel getPhotoModel() {
+    public RefResourceModel getRefPhotoModel() {
         return photoModel;
     }
 
-    public void setPhotoModel(ResourceModel photoModel) {
+    public void setRefPhotoModel(RefResourceModel photoModel) {
         this.photoModel = photoModel;
     }
 
-    public ResourceModel getVideoModel() {
+    public RefResourceModel getVideoModel() {
         return videoModel;
     }
 
-    public void setVideoModel(ResourceModel videoModel) {
+    public void setRefVideoModel(RefResourceModel videoModel) {
         this.videoModel = videoModel;
     }
 
-    public ResourceModel getAudioModel() {
-        return audioModel;
+    public RefResourceModel getRefAudioModel() {
+        return refAudioModel;
     }
 
     public String getSpec() {
@@ -124,8 +136,8 @@ public class ArtWorkModel extends DelleMuseModelObject {
         this.spec = spec;
     }
 
-    public void setAudioModel(ResourceModel audioModel) {
-        this.audioModel = audioModel;
+    public void setRefAudioModel(RefResourceModel audioModel) {
+        this.refAudioModel = audioModel;
     }
 
     public String getIntro() {
@@ -143,5 +155,21 @@ public class ArtWorkModel extends DelleMuseModelObject {
     public void setIntroKey(String introKey) {
         this.introKey = introKey;
     }
+
+	public RefSiteModel getRefSite() {
+		return refSiteModel;
+	}
+
+	public void setSite(RefSiteModel siteModel) {
+		this.refSiteModel = siteModel;
+	}
+
+	public boolean isUsethumbnail() {
+		return usethumbnail;
+	}
+
+	public void setUsethumbnail(boolean usethumbnail) {
+		this.usethumbnail = usethumbnail;
+	}
 
 }

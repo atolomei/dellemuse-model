@@ -19,7 +19,6 @@ import dellemuse.model.util.Constant;
 
 @JsonInclude(Include.NON_NULL)
 @JsonPropertyOrder({ "id", "name", "title", "lastmodifiedUser" })
-
 public class DelleMuseModelObject extends JsonObject implements Serializable {
 
     private static final long serialVersionUID = 1L;

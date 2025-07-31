@@ -4,21 +4,29 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import dellemuse.model.ref.RefArtExhibitionModel;
+import dellemuse.model.ref.RefGuideContentModel;
+import dellemuse.model.ref.RefResourceModel;
+
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(Include.NON_NULL)
+@JsonPropertyOrder({ "id", "name", "photo", "audio", "artExhibition", "contents" })
 public class ArtExhibitionGuideModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
     @JsonProperty("artExhibition")
-    private ArtExhibitionModel artExhibitionModel;
-
-    @JsonProperty("publisher")
-    private PersonModel personModel;
+    private RefArtExhibitionModel refArtExhibitionModel;
 
     @JsonProperty("contents")
-    private List<GuideContentModel> contents;
+    private List<RefGuideContentModel> refContents;
+
+    // REF
+    @JsonProperty("publisher")
+    private PersonModel personModel;
 
     @JsonProperty("subtitle")
     private String subtitle;
@@ -39,39 +47,39 @@ public class ArtExhibitionGuideModel extends DelleMuseModelObject {
     private boolean official;
 
     @JsonProperty("photo")
-    private ResourceModel photoModel;
+    private RefResourceModel refPhotoModel;
 
     @JsonProperty("video")
-    private ResourceModel videoModel;
+    private RefResourceModel refVideoModel;
 
     @JsonProperty("audio")
-    private ResourceModel audioModel;
+    private RefResourceModel refAudioModel;
 
     public ArtExhibitionGuideModel() {
     }
 
-    public ArtExhibitionModel getArtExhibitionModel() {
-        return artExhibitionModel;
+    public RefArtExhibitionModel getRefArtExhibition() {
+        return refArtExhibitionModel;
     }
 
-    public void setArtExhibitionModel(ArtExhibitionModel artExhibitionModel) {
-        this.artExhibitionModel = artExhibitionModel;
+    public void setRefArtExhibition(RefArtExhibitionModel artExhibitionModel) {
+        this.refArtExhibitionModel = artExhibitionModel;
     }
 
-    public PersonModel getPersonModel() {
+    public PersonModel getPerson() {
         return personModel;
     }
 
-    public void setPersonModel(PersonModel personModel) {
+    public void setPerson(PersonModel personModel) {
         this.personModel = personModel;
     }
 
-    public List<GuideContentModel> getContents() {
-        return contents;
+    public List<RefGuideContentModel> getRefContents() {
+        return refContents;
     }
 
-    public void setContents(List<GuideContentModel> contents) {
-        this.contents = contents;
+    public void setRefContents(List<RefGuideContentModel> contents) {
+        this.refContents = contents;
     }
 
     public String getSubtitle() {
@@ -122,28 +130,46 @@ public class ArtExhibitionGuideModel extends DelleMuseModelObject {
         this.official = official;
     }
 
-    public ResourceModel getPhotoModel() {
-        return photoModel;
-    }
+	public RefArtExhibitionModel getRefArtExhibitionModel() {
+		return refArtExhibitionModel;
+	}
 
-    public void setPhotoModel(ResourceModel photoModel) {
-        this.photoModel = photoModel;
-    }
+	public PersonModel getPersonModel() {
+		return personModel;
+	}
 
-    public ResourceModel getVideoModel() {
-        return videoModel;
-    }
 
-    public void setVideoModel(ResourceModel videoModel) {
-        this.videoModel = videoModel;
-    }
+	public void setRefArtExhibitionModel(RefArtExhibitionModel refArtExhibitionModel) {
+		this.refArtExhibitionModel = refArtExhibitionModel;
+	}
 
-    public ResourceModel getAudioModel() {
-        return audioModel;
-    }
+	public void setPersonModel(PersonModel personModel) {
+		this.personModel = personModel;
+	}
 
-    public void setAudioModel(ResourceModel audioModel) {
-        this.audioModel = audioModel;
-    }
+	public RefResourceModel getRefPhotoModel() {
+		return refPhotoModel;
+	}
 
+	public RefResourceModel getRefVideoModel() {
+		return refVideoModel;
+	}
+
+	public RefResourceModel getRefAudioModel() {
+		return refAudioModel;
+	}
+
+	public void setRefPhotoModel(RefResourceModel refPhotoModel) {
+		this.refPhotoModel = refPhotoModel;
+	}
+
+	public void setRefVideoModel(RefResourceModel refVideoModel) {
+		this.refVideoModel = refVideoModel;
+	}
+
+	public void setRefAudioModel(RefResourceModel refAudioModel) {
+		this.refAudioModel = refAudioModel;
+	}
+
+   
 }

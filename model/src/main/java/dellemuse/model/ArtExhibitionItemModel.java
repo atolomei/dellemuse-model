@@ -2,25 +2,35 @@ package dellemuse.model;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import dellemuse.model.ref.RefArtExhibitionModel;
+import dellemuse.model.ref.RefArtWorkModel;
+import dellemuse.model.ref.RefSiteModel;
+
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+
 @JsonInclude(Include.NON_NULL)
+@JsonPropertyOrder({ "id", "name", "artExhibition", "artwork", "site" })
 public class ArtExhibitionItemModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
     @JsonProperty("artExhibition")
-    private ArtExhibitionModel artExhibitionModel;
+    private RefArtExhibitionModel refArtExhibition;
 
     @JsonProperty("artwork")
-    private ArtWorkModel artworkModel;
+    private RefArtWorkModel refArtworkModel;
     
     @JsonProperty("site")
-    private SiteModel siteModel;
+    private RefSiteModel refSiteModel;
 
+    // REF
     @JsonProperty("floor")
     private FloorModel floorModel;
 
+    // REF
     @JsonProperty("room")
     private RoomModel roomModel;
 
@@ -45,43 +55,43 @@ public class ArtExhibitionItemModel extends DelleMuseModelObject {
     @JsonProperty("website")
     private String wesite;
     
-    public ArtExhibitionModel getArtExhibitionModel() {
-        return artExhibitionModel;
+    public RefArtExhibitionModel getRefArtExhibition() {
+        return refArtExhibition;
     }
 
-    public void setArtExhibitionModel(ArtExhibitionModel artExhibitionModel) {
-        this.artExhibitionModel = artExhibitionModel;
+    public void setRefArtExhibition(RefArtExhibitionModel artExhibitionModel) {
+        this.refArtExhibition = artExhibitionModel;
     }
 
-    public ArtWorkModel getArtworkModel() {
-        return artworkModel;
+    public RefArtWorkModel getRefArtWork() {
+        return refArtworkModel;
     }
 
-    public void setArtworkModel(ArtWorkModel artworkModel) {
-        this.artworkModel = artworkModel;
+    public void setRefArtwork(RefArtWorkModel artworkModel) {
+        this.refArtworkModel = artworkModel;
     }
 
-    public SiteModel getSiteModel() {
-        return siteModel;
+    public RefSiteModel getRefSite() {
+        return refSiteModel;
     }
 
-    public void setSiteModel(SiteModel siteModel) {
-        this.siteModel = siteModel;
+    public void setRefSite(RefSiteModel siteModel) {
+        this.refSiteModel = siteModel;
     }
 
-    public FloorModel getFloorModel() {
+    public FloorModel getFloor() {
         return floorModel;
     }
 
-    public void setFloorModel(FloorModel floorModel) {
+    public void setFloor(FloorModel floorModel) {
         this.floorModel = floorModel;
     }
 
-    public RoomModel getRoomModel() {
+    public RoomModel getRoom() {
         return roomModel;
     }
 
-    public void setRoomModel(RoomModel roomModel) {
+    public void setRoom(RoomModel roomModel) {
         this.roomModel = roomModel;
     }
 
@@ -141,6 +151,7 @@ public class ArtExhibitionItemModel extends DelleMuseModelObject {
         this.wesite = wesite;
     }
 
+    
     public ArtExhibitionItemModel() {}
     
     

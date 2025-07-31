@@ -3,6 +3,10 @@ package dellemuse.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+import dellemuse.model.ref.RefArtExhibitionGuideModel;
+import dellemuse.model.ref.RefResourceModel;
+
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(Include.NON_NULL)
@@ -11,14 +15,12 @@ public class GuideContentModel extends DelleMuseModelObject {
 
     private static final long serialVersionUID = 1L;
 
-
     @JsonProperty("artExhibitionItem")
     private ArtExhibitionItemModel artExhibitionItemModel;
 
     @JsonProperty("artExhibitionGuide")
-    private ArtExhibitionGuideModel artExhibitionGuideModel;
+    private RefArtExhibitionGuideModel refArtExhibitionGuideModel;
 
-    
     @JsonProperty("guideOrder")
     private int guideOrder;
 
@@ -35,27 +37,27 @@ public class GuideContentModel extends DelleMuseModelObject {
     private String infoKey;
 
     @JsonProperty("photo")
-    private ResourceModel photoModel;
+    private RefResourceModel refPhotoModel;
 
     @JsonProperty("video")
-    private ResourceModel videoModel;
+    private RefResourceModel refVideoModel;
 
     @JsonProperty("audio")
-    private ResourceModel audioModel;
+    private RefResourceModel refAudioModel;
 
-    public ArtExhibitionGuideModel getArtExhibitionGuideModel() {
-        return artExhibitionGuideModel;
+    public RefArtExhibitionGuideModel getRefArtExhibitionGuide() {
+        return refArtExhibitionGuideModel;
     }
 
-    public void setArtExhibitionGuideModel(ArtExhibitionGuideModel artExhibitionGuideModel) {
-        this.artExhibitionGuideModel = artExhibitionGuideModel;
+    public void setArtExhibitionGuide(RefArtExhibitionGuideModel artExhibitionGuideModel) {
+        this.refArtExhibitionGuideModel = artExhibitionGuideModel;
     }
 
-    public ArtExhibitionItemModel getArtExhibitionItemModel() {
+    public ArtExhibitionItemModel getArtExhibitionItem() {
         return artExhibitionItemModel;
     }
 
-    public void setArtExhibitionItemModel(ArtExhibitionItemModel artExhibitionItemModel) {
+    public void setArtExhibitionItem(ArtExhibitionItemModel artExhibitionItemModel) {
         this.artExhibitionItemModel = artExhibitionItemModel;
     }
 
@@ -99,28 +101,30 @@ public class GuideContentModel extends DelleMuseModelObject {
         this.infoKey = infoKey;
     }
 
-    public ResourceModel getPhotoModel() {
-        return photoModel;
-    }
+	public RefResourceModel getRefPhotoModel() {
+		return refPhotoModel;
+	}
 
-    public void setPhotoModel(ResourceModel photoModel) {
-        this.photoModel = photoModel;
-    }
+	public RefResourceModel getRefVideoModel() {
+		return refVideoModel;
+	}
 
-    public ResourceModel getVideoModel() {
-        return videoModel;
-    }
+	public RefResourceModel getRefAudioModel() {
+		return refAudioModel;
+	}
 
-    public void setVideoModel(ResourceModel videoModel) {
-        this.videoModel = videoModel;
-    }
+	public void setRefPhotoModel(RefResourceModel refPhotoModel) {
+		this.refPhotoModel = refPhotoModel;
+	}
 
-    public ResourceModel getAudioModel() {
-        return audioModel;
-    }
+	public void setRefVideoModel(RefResourceModel refVideoModel) {
+		this.refVideoModel = refVideoModel;
+	}
 
-    public void setAudioModel(ResourceModel audioModel) {
-        this.audioModel = audioModel;
-    }
-
+	public void setRefAudioModel(RefResourceModel refAudioModel) {
+		this.refAudioModel = refAudioModel;
+	}
+   
+    
+    
 }

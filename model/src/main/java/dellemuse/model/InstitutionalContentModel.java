@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import dellemuse.model.ref.RefSiteModel;
+
 /**
  * 
  */
@@ -13,7 +15,7 @@ public class InstitutionalContentModel extends DelleMuseModelObject {
     private static final long serialVersionUID = 1L;
     
     @JsonProperty("Site")
-    private SiteModel siteModel;
+    private RefSiteModel refSiteModel;
 
     @JsonProperty("institution")
     private InstitutionModel institutioneModel;

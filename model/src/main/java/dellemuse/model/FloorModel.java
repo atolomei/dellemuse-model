@@ -6,6 +6,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import dellemuse.model.ref.RefResourceModel;
+import dellemuse.model.ref.RefSiteModel;
+
 @JsonInclude(Include.NON_NULL)
 public class FloorModel extends DelleMuseModelObject {
 
@@ -15,7 +18,7 @@ public class FloorModel extends DelleMuseModelObject {
     private FloorTypeModel floorTypeModel;
 
     @JsonProperty("site")
-    private SiteModel siteModel;
+    private RefSiteModel refSiteModel;
 
     @JsonProperty("subtitle")
     private String subtitle;
@@ -48,13 +51,13 @@ public class FloorModel extends DelleMuseModelObject {
     private String moreinfoKey;
 
     @JsonProperty("photo")
-    private ResourceModel photoModel;
+    private RefResourceModel refPhotoModel;
 
     @JsonProperty("video")
-    private ResourceModel videoModel;
+    private RefResourceModel refVideoModel;
 
     @JsonProperty("audio")
-    private ResourceModel audioModel;
+    private RefResourceModel refAudioModel;
 
     @JsonProperty("rooms")
     private List<RoomModel> rooms;
