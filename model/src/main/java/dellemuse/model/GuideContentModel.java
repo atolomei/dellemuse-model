@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import dellemuse.model.ref.RefArtExhibitionGuideModel;
+import dellemuse.model.ref.RefArtExhibitionItemModel;
 import dellemuse.model.ref.RefResourceModel;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -16,7 +17,7 @@ public class GuideContentModel extends DelleMuseModelObject {
     private static final long serialVersionUID = 1L;
 
     @JsonProperty("artExhibitionItem")
-    private ArtExhibitionItemModel artExhibitionItemModel;
+    private RefArtExhibitionItemModel refArtExhibitionItemModel;
 
     @JsonProperty("artExhibitionGuide")
     private RefArtExhibitionGuideModel refArtExhibitionGuideModel;
@@ -53,12 +54,12 @@ public class GuideContentModel extends DelleMuseModelObject {
         this.refArtExhibitionGuideModel = artExhibitionGuideModel;
     }
 
-    public ArtExhibitionItemModel getArtExhibitionItem() {
-        return artExhibitionItemModel;
+    public RefArtExhibitionItemModel getArtExhibitionItem() {
+        return refArtExhibitionItemModel;
     }
 
-    public void setArtExhibitionItem(ArtExhibitionItemModel artExhibitionItemModel) {
-        this.artExhibitionItemModel = artExhibitionItemModel;
+    public void setRefArtExhibitionItem(RefArtExhibitionItemModel artExhibitionItemModel) {
+        this.refArtExhibitionItemModel = artExhibitionItemModel;
     }
 
     public int getGuideOrder() {

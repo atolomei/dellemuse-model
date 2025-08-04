@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import dellemuse.model.ref.RefPersonModel;
+
 
 @JsonInclude(Include.NON_NULL)
 public class ArtWorkArtistModel extends DelleMuseModelObject {
@@ -14,7 +16,7 @@ public class ArtWorkArtistModel extends DelleMuseModelObject {
     private ArtWorkModel artworkModel;
     
     @JsonProperty("artistModelRef")    
-    private PersonModelRef artistRef;
+    private RefPersonModel artistRef;
 
     public ArtWorkArtistModel() {
     }

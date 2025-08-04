@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import dellemuse.model.ref.RefArtExhibitionModel;
 import dellemuse.model.ref.RefGuideContentModel;
+import dellemuse.model.ref.RefPersonModel;
 import dellemuse.model.ref.RefResourceModel;
 
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -24,9 +25,8 @@ public class ArtExhibitionGuideModel extends DelleMuseModelObject {
     @JsonProperty("contents")
     private List<RefGuideContentModel> refContents;
 
-    // REF
     @JsonProperty("publisher")
-    private PersonModel personModel;
+    private RefPersonModel refPersonModel;
 
     @JsonProperty("subtitle")
     private String subtitle;
@@ -66,12 +66,12 @@ public class ArtExhibitionGuideModel extends DelleMuseModelObject {
         this.refArtExhibitionModel = artExhibitionModel;
     }
 
-    public PersonModel getPerson() {
-        return personModel;
+    public RefPersonModel getRefPerson() {
+        return refPersonModel;
     }
 
-    public void setPerson(PersonModel personModel) {
-        this.personModel = personModel;
+    public void setRefPerson(RefPersonModel personModel) {
+        this.refPersonModel = personModel;
     }
 
     public List<RefGuideContentModel> getRefContents() {
@@ -134,18 +134,10 @@ public class ArtExhibitionGuideModel extends DelleMuseModelObject {
 		return refArtExhibitionModel;
 	}
 
-	public PersonModel getPersonModel() {
-		return personModel;
-	}
-
-
 	public void setRefArtExhibitionModel(RefArtExhibitionModel refArtExhibitionModel) {
 		this.refArtExhibitionModel = refArtExhibitionModel;
 	}
 
-	public void setPersonModel(PersonModel personModel) {
-		this.personModel = personModel;
-	}
 
 	public RefResourceModel getRefPhotoModel() {
 		return refPhotoModel;

@@ -8,6 +8,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
+import dellemuse.model.ref.RefPersonModel;
 import dellemuse.model.ref.RefResourceModel;
 import dellemuse.model.ref.RefSiteModel;
 
@@ -20,9 +21,8 @@ public class ArtWorkModel extends DelleMuseModelObject {
     @JsonProperty("site")
     private RefSiteModel refSiteModel;
     
-    // REF
     @JsonProperty("artists")
-    Set<PersonModelRef> artists = new HashSet<>();
+    Set<RefPersonModel> artists = new HashSet<>();
 
     @JsonProperty("artworkType")
     private ArtWorkTypeModel artworkTypeModel;
@@ -60,11 +60,11 @@ public class ArtWorkModel extends DelleMuseModelObject {
     @JsonProperty("usethumbnail")
     private boolean usethumbnail;
     
-    public Set<PersonModelRef> getArtists() {
+    public Set<RefPersonModel> getRefArtists() {
         return artists;
     }
 
-    public void setArtists(Set<PersonModelRef> artists) {
+    public void setRefArtists(Set<RefPersonModel> artists) {
         this.artists = artists;
     }
 
