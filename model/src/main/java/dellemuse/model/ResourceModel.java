@@ -26,6 +26,9 @@ public class ResourceModel extends DelleMuseModelObject {
 	@JsonProperty("infoKey")
 	private String infoKey;
 
+	@JsonProperty("size")
+	private long size;
+
 	@JsonProperty("usethumbnail")
 	private boolean usethumbnail;
 
@@ -83,5 +86,13 @@ public class ResourceModel extends DelleMuseModelObject {
 
 	public void setUsethumbnail(boolean usethumbnail) {
 		this.usethumbnail = usethumbnail;
+	}
+
+	public long getSize() {
+		return size;
+	}
+
+	public void setSize(long size) {
+		this.size = size;
 	}
 }

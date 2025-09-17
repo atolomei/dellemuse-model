@@ -6,10 +6,9 @@ public enum ThumbnailSize {
     MEDIUM      (2, "medium", 280),                 // fija alto en 280 y el ancho en alto x 4/3
     LARGE       (3, "large", 480),                  // fija alto en 480 y el ancho en alto x 4/3 
     W980        (4, "W980", "width", 980),          // fija ancho en 980 y el ancho en alto x 4/3
-    MINI        (5, "mini", 82, 82),                // fija alto y ancho en 80, el thumbnail hace el resizing óptimo para que ocupe la mayor superficie posible del 80x80
-                                                            
-                    
-    AVATAR_STATUS (6, "avatarStatus", 20, 20);             // fija alto y ancho en 80, el thumbnail hace el resizing óptimo para que ocupe la mayor superficie posible del 240x24
+    EYEFISH     (5, "eyefish", "width", 1920, true),         // fija ancho lo mas posible y el alto ...
+    MINI        (6, "mini", 82, 82),                // fija alto y ancho en 80, el thumbnail hace el resizing óptimo para que ocupe la mayor superficie posible del 80x80
+    AVATAR_STATUS (7, "avatarStatus", 20, 20);             // fija alto y ancho en 80, el thumbnail hace el resizing óptimo para que ocupe la mayor superficie posible del 240x24
 
     private String label;
     private int id;
@@ -77,7 +76,8 @@ public enum ThumbnailSize {
         if  (s.equals(ThumbnailSize.MEDIUM.getLabel())) return ThumbnailSize.MEDIUM;
         if  (s.equals(ThumbnailSize.MINI.getLabel())) return ThumbnailSize.MINI;
         if  (s.equals(ThumbnailSize.W980.getLabel())) return ThumbnailSize.W980;
-        
+        if  (s.equals(ThumbnailSize.EYEFISH.getLabel())) return ThumbnailSize.EYEFISH;
+           
         throw new IllegalArgumentException("Object not found -> " + s);
         
     }
