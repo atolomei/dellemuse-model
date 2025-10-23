@@ -23,7 +23,6 @@ public class JsonObject implements Jsonable {
 		mapper.registerModule(new JavaTimeModule());
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		mapper.registerModule(new Jdk8Module());
-		//mapper.configure(SerializationFeature.FAIL_ON_SELF_REFERENCES, false);
 	}
 
 	@JsonIgnore 

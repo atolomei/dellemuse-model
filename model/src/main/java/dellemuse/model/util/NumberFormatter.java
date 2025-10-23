@@ -21,12 +21,19 @@ import java.math.RoundingMode;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import dellemuse.model.logging.Logger;
+ 
+ 
+
 
 /**
  * 
  * @author atolomei@novamens.com (Alejandro Tolomei)
  */
 public class NumberFormatter {
+
+
+	static private Logger logger = Logger.getLogger(NumberFormatter.class.getName());
 
 	static long KB = 1024;
 	static long MB = 1000 * KB;
@@ -93,7 +100,7 @@ public class NumberFormatter {
 	}
 
 	
-	static public String formatNumber(long number,  Locale locale) {
+	static public String formatNumber(long number, Locale locale) {
 		NumberFormat integer_nf;
 		if (locale.equals(Locale.forLanguageTag("es")))
 			integer_nf = es_integer_nf;
@@ -133,6 +140,64 @@ public class NumberFormatter {
 		return  float_nf.format(number);
 	}
 	
+	
+	static final double  d_ONE_SECOND_MS = 1000.0;
+	static final double  d_ONE_MINUTE_MS =  d_ONE_SECOND_MS * 60.0;
+	static final double  d_ONE_HOUR_MS =  d_ONE_MINUTE_MS * 60.0;
+
+	
+	
+	static final long ONE_SECOND_MS = 1000;
+	static final long ONE_MINUTE_MS =  ONE_SECOND_MS * 60;
+	static final long ONE_HOUR_MS =  ONE_MINUTE_MS * 60;
+	
+	
+	static public String formatDuration(long durationMs) {
+		return formatDuration( durationMs, Locale.getDefault());
+	}
+	
+	static public String formatDuration(long durationMs, Locale locale) {
+		
+
+		// return String.valueOf( Math.round(  Double.valueOf(durationMs) / 1.0)) + " ms";
+
+		
+		// return String.valueOf( Math.round(  Double.valueOf(durationMs) / 1000.0)) + " secs";
+		
+				
+		
+		if (durationMs<ONE_SECOND_MS) {
+			return formatNumber(durationMs, locale)+ " ms";
+		}
+		
+		if (durationMs<ONE_MINUTE_MS) {
+			double seconds = Double.valueOf(durationMs) / d_ONE_SECOND_MS;
+			return formatNumber(   Math.round(seconds), locale)+ " secs";
+		}
+	
+		if (durationMs<ONE_HOUR_MS) {
+			
+			double dec_minutes = Double.valueOf(durationMs) / d_ONE_MINUTE_MS;
+			
+			long minutes = Double.valueOf( Math.floor(dec_minutes)).longValue();
+			
+			
+			long remainderMs = durationMs - minutes * ONE_MINUTE_MS;
+			
+			double d_remainderSecs =  Double.valueOf(remainderMs) / d_ONE_SECOND_MS;
+			long remainderSecs = Math.round(d_remainderSecs);
+				
+			return formatNumber(minutes, locale ) + " min" + " " + formatNumber(Math.round(remainderSecs), locale )  + " secs";
+		}
+		
+		String ret=formatNumber( Math.round( Double.valueOf(durationMs) / d_ONE_SECOND_MS), locale)+" secs";
+		
+		logger.debug(ret);
+		
+		return ret;
+ 
+		
+	}
 	
 	/**
 	 * 
