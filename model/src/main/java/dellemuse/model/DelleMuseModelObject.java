@@ -40,8 +40,8 @@ public class DelleMuseModelObject extends JsonObject implements Serializable {
     @JsonProperty("name")
     private String name;
 
-    @JsonProperty("nameKey")
-    private String nameKey;
+  //  @JsonProperty("nameKey")
+  //  private String nameKey;
 
     @JsonProperty("title")
     private String title;
@@ -79,6 +79,7 @@ public class DelleMuseModelObject extends JsonObject implements Serializable {
         this.title = title;
     }
 
+    /**
     public void setNameKey(String nameKey) {
         this.nameKey = nameKey;
     }
@@ -86,7 +87,8 @@ public class DelleMuseModelObject extends JsonObject implements Serializable {
     public String getNameKey() {
         return nameKey;
     }
-
+**/
+    
     public Long getId() {
         return id;
     }
