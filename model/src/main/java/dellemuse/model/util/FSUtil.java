@@ -64,7 +64,7 @@ public class FSUtil {
 	}
 	
 	static public boolean isImage(String string) {
-		return isGeneralImage(string) || string.toLowerCase().matches("^.*\\.(webp)$"); 
+		return isGeneralImage(string) || string.toLowerCase().matches("^.*\\.(svg)$") || string.toLowerCase().matches("^.*\\.(webp)$"); 
 	}
 	
  	
