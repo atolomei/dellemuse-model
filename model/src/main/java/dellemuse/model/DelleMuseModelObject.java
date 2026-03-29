@@ -40,10 +40,7 @@ public class DelleMuseModelObject extends JsonObject implements Serializable {
     @JsonProperty("name")
     private String name;
 
-  //  @JsonProperty("nameKey")
-  //  private String nameKey;
-
-    @JsonProperty("title")
+      @JsonProperty("title")
     private String title;
 
     @JsonProperty("titleKey")
